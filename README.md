@@ -68,7 +68,11 @@ npx cap sync
 isJailBreakOrRooted() => Promise<{ value: boolean; }>
 ```
 
+Detect if the device has been rooted (Android) or jailbroken (iOS)
+
 **Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
+
+**Since:** 6.0.0
 
 --------------------
 
