@@ -1,6 +1,6 @@
 {
   "name": "@capacitor-community/device-security-detect",
-  "version": "6.0.1",
+  "version": "6.0.2",
   "description": "The Device Security Detect plugin is designed to provide comprehensive device security detection capabilities for Capacitor-based applications. It aims to detect the device has been rooted (Android) or jailbroken (iOS). By using this plugin, developers can enhance the security of their applications and take appropriate actions based on the detected security status.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -43,23 +43,25 @@
     "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.mjs",
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",
+    "removePacked": "rimraf -g capacitor-community-device-security-detect-*.tgz",
+    "publish:locally": "npm run removePacked && npm run build && npm pack",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@capacitor/android": "^6.0.0",
     "@capacitor/core": "^6.0.0",
-    "@capacitor/docgen": "^0.2.2",
+    "@capacitor/docgen": "^0.3.0",
     "@capacitor/ios": "^6.0.0",
     "@ionic/eslint-config": "^0.4.0",
     "@ionic/prettier-config": "^4.0.0",
     "@ionic/swiftlint-config": "^2.0.0",
     "eslint": "^8.57.0",
     "prettier": "^3.3.3",
-    "prettier-plugin-java": "^2.6.4",
+    "prettier-plugin-java": "^2.6.5",
     "rimraf": "^6.0.1",
     "rollup": "^4.24.0",
     "swiftlint": "^2.0.0",
-    "typescript": "~4.1.5"
+    "typescript": "~5.4.5"
   },
   "peerDependencies": {
     "@capacitor/core": "^6.0.0"

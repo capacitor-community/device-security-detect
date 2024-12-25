@@ -1,14 +1,21 @@
 import Foundation
+import UIKit
 
 @objc public class DeviceSecurityDetect: NSObject {
     @objc public func isJailBreak() -> Bool {
+        log("Checking if device is jailbroken")
         return hasCydiaInstalled() || isContainsSuspiciousApps() || isSuspiciousSystemPathsExists() || canEditSystemFiles();
     }
-    
+
+    @objc public func pinCheck(_ value: String) -> String {
+        log("Checking PIN: \(value)")
+        return value
+    }
+
     func hasCydiaInstalled() -> Bool {
         return UIApplication.shared.canOpenURL(URL(string: "cydia://")!)
     }
-    
+
     func isContainsSuspiciousApps() -> Bool {
         for path in suspiciousAppsPathToCheck {
             if FileManager.default.fileExists(atPath: path) {

@@ -2,7 +2,7 @@
 <h3 align="center">Device Security Detect Plugin</h3>
 <p align="center"><strong><code>@capacitor-community/device-security-detect</code></strong></p>
 <p align="center">
-  The Device Security Detect plugin is designed to provide comprehensive device security detection capabilities for Capacitor-based applications. It aims to detect the device has been rooted (Android) or jailbroken (iOS). By using this plugin, developers can enhance the security of their applications and take appropriate actions based on the detected security status.
+The Device Security Detect plugin offers advanced device security detection features for Capacitor-based applications. It enables developers to determine whether a device has been rooted (Android) or jailbroken (iOS), providing a crucial layer of security assessment. By integrating this plugin, developers can proactively safeguard their applications, mitigate risks, and implement tailored responses based on the device's security status.
 </p>
 
 <p align="center">
@@ -46,8 +46,21 @@
 
 ## Installation
 
+Using npm:
+
 ```bash
 npm install @capacitor-community/device-security-detect
+```
+
+Using yarn:
+
+```bash
+yarn add @capacitor-community/device-security-detect
+```
+
+Sync native files:
+
+```bash
 npx cap sync
 ```
 
@@ -56,6 +69,7 @@ npx cap sync
 <docgen-index>
 
 * [`isJailBreakOrRooted()`](#isjailbreakorrooted)
+* [`pinCheck()`](#pincheck)
 
 </docgen-index>
 
@@ -68,11 +82,32 @@ npx cap sync
 isJailBreakOrRooted() => Promise<{ value: boolean; }>
 ```
 
-Detect if the device has been rooted (Android) or jailbroken (iOS)
+Detect if the device has been rooted (Android) or jailbroken (iOS).
+
+This method provides a boolean value indicating whether the device
+has been tampered with (e.g., by rooting or jailbreaking).
 
 **Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
 
 **Since:** 6.0.0
+
+--------------------
+
+
+### pinCheck()
+
+```typescript
+pinCheck() => Promise<{ value: boolean; }>
+```
+
+Check if a PIN, password, or biometric authentication is enabled on the device.
+
+This method checks whether the user has set up any kind of secure lock mechanism
+(e.g., PIN, password, or biometric authentication) on their mobile device.
+
+**Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
+
+**Since:** 6.0.2
 
 --------------------
 
@@ -82,8 +117,53 @@ Detect if the device has been rooted (Android) or jailbroken (iOS)
 
 ### Detect if the device has been rooted (Android) or jailbroken (iOS)
 
-```
+```typescript
 import { DeviceSecurityDetect } from '@capacitor-community/device-security-detect';
 
-const { value } = await DeviceSecurityDetect.isJailBreakOrRooted();
+async function checkRootStatus() {
+  const { value } = await DeviceSecurityDetect.isJailBreakOrRooted();
+  if (value) {
+    console.warn('The device is rooted or jailbroken!');
+  } else {
+    console.log('The device is secure.');
+  }
+}
+```
+
+### Check if a PIN, password, or biometric authentication is enabled on the device
+
+```typescript
+import { DeviceSecurityDetect } from '@capacitor-community/device-security-detect';
+
+async function checkPinStatus() {
+  const { value } = await DeviceSecurityDetect.pinCheck();
+  if (value) {
+    console.log('A secure lock mechanism is enabled on the device.');
+  } else {
+    console.warn('No secure lock mechanism is detected.');
+  }
+}
+```
+
+### Full Example
+
+```typescript
+import { DeviceSecurityDetect } from '@capacitor-community/device-security-detect';
+
+async function checkDeviceSecurity() {
+  try {
+    const rootStatus = await DeviceSecurityDetect.isJailBreakOrRooted();
+    console.log(`Root/Jailbreak status: ${rootStatus.value ? 'Yes' : 'No'}`);
+    
+    const pinStatus = await DeviceSecurityDetect.pinCheck();
+    console.log(`Secure lock enabled: ${pinStatus.value ? 'Yes' : 'No'}`);
+  } catch (error) {
+    console.error('Error checking device security:', error);
+  }
+}
+
+checkDeviceSecurity();
+```
+
+Use this plugin to enhance your application's security and respond appropriately to potential risks.
 ```
