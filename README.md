@@ -37,7 +37,7 @@
 
 | Capacitor version | Plugin version |
 | ----------------- | -------------- |
-| 6.x               | 6.x            |
+| 7.x               | 7.x            |
 
 ## Supported Platforms
 
