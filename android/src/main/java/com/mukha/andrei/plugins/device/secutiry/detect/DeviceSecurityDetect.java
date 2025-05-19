@@ -1,5 +1,7 @@
 package com.mukha.andrei.plugins.device.secutiry.detect;
 
+import android.content.Context;
+import android.app.KeyguardManager;
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -9,6 +11,17 @@ import java.io.InputStreamReader;
 public class DeviceSecurityDetect {
     public boolean isDeviceRooted() {
         return checkBuildTags() || checkSuBinary() || isSuBinaryAvailable() || areOtaCertsMissing();
+    }
+
+    public boolean pinCheck(Context context) {
+        Log.d("DeviceSecurityDetect", "Checking if PIN or biometric authentication is enabled");
+        try {
+            KeyguardManager keyguardManager = (KeyguardManager) context.getSystemService(Context.KEYGUARD_SERVICE);
+            return keyguardManager.isKeyguardSecure();
+        } catch (Exception ex) {
+            Log.e("DeviceSecurityDetect", "Error checking PIN security: " + ex.getMessage());
+            return false;
+        }
     }
 
     private boolean checkBuildTags() {

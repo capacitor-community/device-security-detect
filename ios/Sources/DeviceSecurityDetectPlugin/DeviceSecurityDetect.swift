@@ -1,8 +1,23 @@
 import Foundation
+import UIKit
+import LocalAuthentication
 
 @objc public class DeviceSecurityDetect: NSObject {
     @objc public func isJailBreak() -> Bool {
         return hasCydiaInstalled() || isContainsSuspiciousApps() || isSuspiciousSystemPathsExists() || canEditSystemFiles();
+    }
+
+    @objc public func pinCheck() -> Bool {
+        log("Checking if PIN or biometric authentication is enabled")
+        let context = LAContext()
+        var error: NSError?
+
+        if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
+            return true
+        } else {
+            log("Error checking PIN/Biometric authentication: \(error?.localizedDescription ?? "Unknown error")")
+            return false
+        }
     }
     
     func hasCydiaInstalled() -> Bool {

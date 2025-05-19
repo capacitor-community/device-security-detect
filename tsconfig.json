@@ -5,6 +5,8 @@
     "esModuleInterop": true,
     "inlineSources": true,
     "lib": ["dom", "es2017"],
+    "types": [],
+    "skipLibCheck": true,
     "module": "esnext",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
