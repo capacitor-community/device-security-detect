@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Device Security Detect Demo App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Device Security Detect Demo App</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-toolbar class="button-toolbar">
+    <ion-buttons>
+      <ion-button color="primary" fill="solid" (click)="checkRootStatus()">Check Root Status</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar class="button-toolbar">
+    <ion-buttons>
+      <ion-button color="primary" fill="solid" (click)="checkPinStatus()">Check Pin Status</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-content>
