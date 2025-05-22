@@ -18,7 +18,6 @@ public class DeviceSecurityDetectPlugin: CAPPlugin, CAPBridgedPlugin {
     }
 
     @objc func pinCheck(_ call: CAPPluginCall) {
-        log("Checking PIN status from plugin")
         call.resolve([
             "value": implementation.pinCheck()
         ])
