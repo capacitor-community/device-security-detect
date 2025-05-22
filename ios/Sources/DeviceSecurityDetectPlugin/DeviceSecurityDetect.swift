@@ -8,14 +8,12 @@ import LocalAuthentication
     }
 
     @objc public func pinCheck() -> Bool {
-        log("Checking if PIN or biometric authentication is enabled")
         let context = LAContext()
         var error: NSError?
 
         if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
             return true
         } else {
-            log("Error checking PIN/Biometric authentication: \(error?.localizedDescription ?? "Unknown error")")
             return false
         }
     }
