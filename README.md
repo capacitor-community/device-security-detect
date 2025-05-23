@@ -29,7 +29,7 @@
 ## Maintainers
 
 | Maintainer | GitHub                              | Active |
-| ---------- | -------------------------------     | ------ |
+| ---------- | ----------------------------------- | ------ |
 | 4ooper     | [4ooper](https://github.com/4ooper) | yes    |
 | ryaa       | [ryaa](https://github.com/ryaa)     | yes    |
 
@@ -67,8 +67,8 @@ npx cap sync
 
 <docgen-index>
 
-* [`isJailBreakOrRooted()`](#isjailbreakorrooted)
-* [`pinCheck()`](#pincheck)
+- [`isJailBreakOrRooted()`](#isjailbreakorrooted)
+- [`pinCheck()`](#pincheck)
 
 </docgen-index>
 
@@ -90,8 +90,7 @@ has been tampered with (e.g., by rooting or jailbreaking).
 
 **Since:** 6.0.0
 
---------------------
-
+---
 
 ### pinCheck()
 
@@ -108,7 +107,7 @@ This method checks whether the user has set up any kind of secure lock mechanism
 
 **Since:** 6.0.2
 
---------------------
+---
 
 </docgen-api>
 
@@ -166,4 +165,7 @@ checkDeviceSecurity();
 ```
 
 Use this plugin to enhance your application's security and respond appropriately to potential risks.
+
+```
+
 ```
