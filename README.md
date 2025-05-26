@@ -67,8 +67,8 @@ npx cap sync
 
 <docgen-index>
 
-- [`isJailBreakOrRooted()`](#isjailbreakorrooted)
-- [`pinCheck()`](#pincheck)
+* [`isJailBreakOrRooted()`](#isjailbreakorrooted)
+* [`pinCheck()`](#pincheck)
 
 </docgen-index>
 
@@ -90,7 +90,8 @@ has been tampered with (e.g., by rooting or jailbreaking).
 
 **Since:** 6.0.0
 
----
+--------------------
+
 
 ### pinCheck()
 
@@ -107,7 +108,7 @@ This method checks whether the user has set up any kind of secure lock mechanism
 
 **Since:** 6.0.2
 
----
+--------------------
 
 </docgen-api>
 

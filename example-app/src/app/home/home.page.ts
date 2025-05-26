@@ -4,7 +4,6 @@ import {
 } from '@ionic/angular/standalone';
 
 // NATIVE
-import { Camera, CameraSource, CameraResultType } from '@capacitor/camera';
 import { DeviceSecurityDetect } from '@capacitor-community/device-security-detect';
 
 @Component({
