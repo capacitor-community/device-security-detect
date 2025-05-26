@@ -38,6 +38,7 @@
 | Capacitor version | Plugin version |
 | ----------------- | -------------- |
 | 7.x               | 7.x            |
+| 6.x               | 6.x            |
 
 ## Supported Platforms
 
@@ -106,7 +107,7 @@ This method checks whether the user has set up any kind of secure lock mechanism
 
 **Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
 
-**Since:** 6.0.2
+**Since:** 7.0.0
 
 --------------------
 
