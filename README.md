@@ -164,8 +164,6 @@ async function checkDeviceSecurity() {
 checkDeviceSecurity();
 ```
 
+or please see **example-app** for a complete example.
+
 Use this plugin to enhance your application's security and respond appropriately to potential risks.
-
-```
-
-```
