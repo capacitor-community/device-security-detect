@@ -1,5 +1,20 @@
 # Changelog
 
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [8.0.0](https://github.com/capacitor-community/device-security-detect/compare/v7.0.0...v8.0.0) (2026-01-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* This plugin now supports Capacitor 8.
+
+### Features
+
+* Capacitor 8 support ([#18](https://github.com/capacitor-community/device-security-detect/issues/18)) ([3cd8e41](https://github.com/capacitor-community/device-security-detect/commit/3cd8e41155d1d925375e2f24afca85d294040394))
+
+# Changelog
+
 All notable changes to this project will be documented in this file.
 
 ## [v7.0.0](https://github.com/capacitor-community/device-security-detect/compare/v6.0.1...v7.0.0) (2025-05-26)
