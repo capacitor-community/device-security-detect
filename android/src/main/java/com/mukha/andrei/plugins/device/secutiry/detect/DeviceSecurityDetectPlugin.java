@@ -1,7 +1,6 @@
 package com.mukha.andrei.plugins.device.secutiry.detect;
 
 import android.content.Context;
-
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
@@ -10,6 +9,7 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 
 @CapacitorPlugin(name = "DeviceSecurityDetect")
 public class DeviceSecurityDetectPlugin extends Plugin {
+
     private DeviceSecurityDetect implementation = new DeviceSecurityDetect();
 
     @PluginMethod

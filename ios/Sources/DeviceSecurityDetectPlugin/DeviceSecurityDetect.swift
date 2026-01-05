@@ -5,7 +5,7 @@ import LocalAuthentication
 @objc public class DeviceSecurityDetect: NSObject {
     @objc public func isJailBreak() -> Bool {
         log("Checking if device is jailbroken")
-        return hasCydiaInstalled() || isContainsSuspiciousApps() || isSuspiciousSystemPathsExists() || canEditSystemFiles();
+        return hasCydiaInstalled() || isContainsSuspiciousApps() || isSuspiciousSystemPathsExists() || canEditSystemFiles()
     }
 
     @objc public func pinCheck() -> Bool {
@@ -20,11 +20,11 @@ import LocalAuthentication
             return false
         }
     }
-    
+
     func hasCydiaInstalled() -> Bool {
         return UIApplication.shared.canOpenURL(URL(string: "cydia://")!)
     }
-    
+
     func isContainsSuspiciousApps() -> Bool {
         for path in suspiciousAppsPathToCheck {
             if FileManager.default.fileExists(atPath: path) {
@@ -33,7 +33,7 @@ import LocalAuthentication
         }
         return false
     }
-    
+
     func isSuspiciousSystemPathsExists() -> Bool {
         for path in suspiciousSystemPathsToCheck {
             if FileManager.default.fileExists(atPath: path) {
@@ -42,7 +42,7 @@ import LocalAuthentication
         }
         return false
     }
-    
+
     func canEditSystemFiles() -> Bool {
         let jailBreakText = "Developer Insider"
         do {
@@ -52,7 +52,7 @@ import LocalAuthentication
             return false
         }
     }
-    
+
     var suspiciousAppsPathToCheck: [String] {
         return [
             "/Applications/Cydia.app",
@@ -66,7 +66,7 @@ import LocalAuthentication
             "/Applications/WinterBoard.app"
         ]
     }
-        
+
     var suspiciousSystemPathsToCheck: [String] {
         return [
             "/Library/MobileSubstrate/DynamicLibraries/LiveClock.plist",
