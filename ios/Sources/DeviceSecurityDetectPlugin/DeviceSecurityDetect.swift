@@ -5,6 +5,10 @@ import LocalAuthentication
 @objc public class DeviceSecurityDetect: NSObject {
     @objc public func isJailBreak() -> Bool {
         log("Checking if device is jailbroken")
+        #if targetEnvironment(simulator)
+            log("Skipping jailbreak checks on simulator")
+            return false
+        #endif
         return hasCydiaInstalled() || isContainsSuspiciousApps() || isSuspiciousSystemPathsExists() || canEditSystemFiles()
     }
 
