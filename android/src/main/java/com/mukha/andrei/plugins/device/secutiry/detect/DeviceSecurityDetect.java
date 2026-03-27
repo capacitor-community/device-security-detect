@@ -32,6 +32,12 @@ public class DeviceSecurityDetect {
     private boolean checkSuBinary() {
         String[] paths = {
             "/system/app/Superuser.apk",
+            "/system/app/superuser.apk",
+            "/system/app/Superuser/Superuser.apk",
+            "/system/app/Superuser/superuser.apk",
+            "/system/app/superuser/Superuser.apk",
+            "/system/app/superuser/superuser.apk",
+
             "/sbin/su",
             "/system/bin/su",
             "/system/xbin/su",
@@ -40,7 +46,30 @@ public class DeviceSecurityDetect {
             "/system/sd/xbin/su",
             "/system/bin/failsafe/su",
             "/data/local/su",
-            "/su/bin/su"
+            "/su/bin/su",
+
+            "/data/local/",
+            "/data/local/xbin/",
+            "/data/local/bin/",
+            "/sbin/",
+            "/system/",
+            "/system/bin/",
+            "/system/bin/.ext/",
+            "/system/bin/.ext/.su/",
+            "/system/bin/failsafe/",
+            "/system/sd/xbin/",
+            "/system/xbin/",
+
+            "/su/bin/",
+            "/su/xbin/",
+            "/ipcData/local/",
+            "/ipcData/local/xbin/",
+
+            "/system/usr/we-need-root/",
+            "/system/usr/we-need-root/su-backup/",
+            "/system/xbin/mu/",
+
+            "/magisk/.core/bin/"
         };
         for (String path : paths) {
             if (new File(path).exists()) return true;
