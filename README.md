@@ -168,4 +168,8 @@ checkDeviceSecurity();
 
 or please see **example-app** for a complete example.
 
+## Security limitations
+
+Root and jailbreak detection is a best-effort risk signal. The iOS implementation combines file and directory checks, sandbox escape checks, process environment checks, known local Frida endpoint checks, and loaded Mach-O image inspection. Runtime instrumentation can still modify an application's code or its returned values, so no client-side plugin can guarantee detection against an attacker who fully controls the process. Use the result as one layer of a broader security strategy and enforce sensitive decisions on a trusted backend.
+
 Use this plugin to enhance your application's security and respond appropriately to potential risks.
